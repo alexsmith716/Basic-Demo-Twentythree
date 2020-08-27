@@ -1,0 +1,92 @@
+@import '../../../theme/scss/app/functions-assign-unit.scss';
+@import '../../../theme/scss/app/mixins.scss';
+
+.home {
+	.specialHomeColor {
+		color: #a52a2a;
+	}
+}
+
+.scssLocalColor {
+	color: #ff6103;
+}
+
+.masthead {
+	padding-top: 1rem;
+	padding-bottom: calculate-pixels-to-rem(90);
+	background-image: url('../img/splashImage-2048x719.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-position-x: 32%;
+	@include background-cover;
+
+	text-align: center;
+	@include color-crimson;
+	@include tester-font;
+
+	.headingMain {
+		font-size: calculate-pixels-to-rem(76);
+		font-weight: 600;
+		@include color-dodgerblue-4;
+		@include tester-font3;
+	}
+
+	.headingMainSub {
+		font-size: calculate-pixels-to-rem(42);
+		font-weight: 400;
+		@include color-darkorange;
+	}
+
+	.blurb {
+		margin-top: calculate-pixels-to-rem(20);
+		margin-bottom: calculate-pixels-to-rem(5);
+		font-size: 1.2rem;
+		@include tester-font4;
+	}
+
+	.blurbElipsis {
+		margin-left: calculate-pixels-to-rem(25);
+		margin-bottom: calculate-pixels-to-rem(35);
+		font-size: 1.2rem;
+		@include tester-font4;
+	}
+
+	@media (min-width: 768px) {
+		text-align: left;
+
+		h1 {
+			font-size: 4.1rem;
+		}
+
+		h2 {
+			font-size: 2.3rem;
+		}
+
+		.blurb {
+			font-size: 1.4rem;
+		}
+
+		.blurbElipsis {
+			font-size: 1.4rem;
+		}
+	}
+
+	@media (min-width: 992px) {
+
+		h1 {
+			font-size: 4.7rem;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+		}
+
+		.blurb {
+			font-size: 1.6rem;
+		}
+
+		.blurbElipsis {
+			font-size: 1.6rem;
+		}
+	}
+}
