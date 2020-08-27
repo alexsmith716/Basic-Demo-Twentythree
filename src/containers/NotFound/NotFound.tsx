@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import styles from './scss/NotFound.scss';
 
-
-export const NotFound = () => {
-
-	const styles = require('./scss/NotFound.scss');
-
+export const NotFound: React.FC = () => {
 	return (
 		<div>
-
 			<Helmet title="Page Not Found" />
 
 			<h1 className={styles.notFoundUniqueColor}>Status Code 404!</h1>
@@ -20,4 +16,4 @@ export const NotFound = () => {
 			</div>
 		</div>
 	);
-}
+};
