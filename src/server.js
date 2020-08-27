@@ -26,14 +26,7 @@ import apiClient from './helpers/apiClient';
 
 import defineHeaders from './utils/defineHeaders';
 
-import {
-	ApolloProvider,
-	ApolloClient,
-	createHttpLink,
-	InMemoryCache,
-	ApolloLink,
-	gql,
-} from '@apollo/client';
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink, gql } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
 import { getDataFromTree } from '@apollo/client/react/ssr';
@@ -60,14 +53,17 @@ const customFetch = (uri, options) => {
 	const pending = fetch(uri, {
 		method: options.method,
 		body: options.body,
-		headers: options.headers
-	})
-	return pending.then((response) => {
-		console.log('>>>> SERVER > customFetch > response: ', response);
-		return response;
-	}, (error) => {
-		console.log('>>>> SERVER > customFetch > ERROR: ', error);
-	})
+		headers: options.headers,
+	});
+	return pending.then(
+		(response) => {
+			console.log('>>>> SERVER > customFetch > response: ', response);
+			return response;
+		},
+		(error) => {
+			console.log('>>>> SERVER > customFetch > ERROR: ', error);
+		}
+	);
 };
 
 const customFetchAsync = async (uri, options) => {
@@ -79,8 +75,8 @@ const customFetchAsync = async (uri, options) => {
 	const response = await fetch(uri, {
 		method: options.method,
 		body: options.body,
-		headers: options.headers
-	})
+		headers: options.headers,
+	});
 	try {
 		console.log('>>>> SERVER > customFetchAsync > response: ', response);
 		return response;
@@ -104,7 +100,7 @@ export default ({ clientStats }) => async (req, res) => {
 
 	const providers = {
 		//	app: createApp(req),
-		client: apiClient(req)
+		client: apiClient(req),
 	};
 
 	const store = configureStore({
@@ -116,7 +112,7 @@ export default ({ clientStats }) => async (req, res) => {
 	// =====================================================
 
 	//	Composing a link chain:
-	//	Each link should represent a self-contained modification to a GraphQL operation. 
+	//	Each link should represent a self-contained modification to a GraphQL operation.
 	//	By composing these links into a chain, you can create an arbitrarily complex model for your client's data flow.
 
 	//	There are two forms of link composition: additive and directional.
@@ -140,7 +136,7 @@ export default ({ clientStats }) => async (req, res) => {
 		fetch: fetch,
 	});
 
-	//	const restLink = new RestLink({ 
+	//	const restLink = new RestLink({
 	//		uri: 'https://rickandmortyapi.com/api/',
 	//		// endpoints: '/api',
 	//		customFetch: fetch,
@@ -151,7 +147,9 @@ export default ({ clientStats }) => async (req, res) => {
 	const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) => {
 		if (graphQLErrors) {
 			graphQLErrors.map(({ message, locations, path }) =>
-				console.log(`>>>> SERVER > [GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,),
+				console.log(
+					`>>>> SERVER > [GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+				)
 			);
 		}
 
@@ -188,7 +186,6 @@ export default ({ clientStats }) => async (req, res) => {
 	}
 
 	try {
-
 		await asyncGetPromises(routes, req.path, store);
 
 		console.log('>>>> SERVER > InMemoryCache > CACHE > cache.extract() 1: ', cache.extract());
@@ -270,8 +267,8 @@ export default ({ clientStats }) => async (req, res) => {
 				}
 			`,
 			data: {
-				cartItems: []
-			}
+				cartItems: [],
+			},
 		});
 
 		//	const q = await clientApollo.query({
@@ -363,7 +360,9 @@ export default ({ clientStats }) => async (req, res) => {
 
 		console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
 
-		const html = <Html assets={assets} content={content} store={reduxStore} graphqlState={graphqlInitialState} />;
+		const html = (
+			<Html assets={assets} content={content} store={reduxStore} graphqlState={graphqlInitialState} />
+		);
 
 		const ssrHtml = `<!DOCTYPE html><html lang="en-US">${ReactDOM.renderToString(html)}</html>`;
 		res.status(200).send(ssrHtml);
