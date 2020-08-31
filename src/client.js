@@ -139,18 +139,12 @@ const providers = {
 		const element = (
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
-					{/* ---------------------------------------------------------------- */}
 					<Router history={history}>
-						{/* ------------- */}
 						<ScrollToTop />
-						{/* ------------- */}
-						{/* ------------------------------------------------- */}
 						<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
 							{renderRoutes(_routes)}
 						</RouterTrigger>
-						{/* ------------- */}
 					</Router>
-					{/* ---------------------------------------------------------------- */}
 				</Provider>
 			</HelmetProvider>
 		);

@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import config from '../../config/config';
 
-function Html({ assets, content, store, graphqlState }) {
+function Html({ assets, styledComponents, content, store, graphqlState }) {
 
 	return (
 		<>
@@ -16,10 +15,12 @@ function Html({ assets, content, store, graphqlState }) {
 
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
-				<meta name="application-name" content="Election App 2019!" />
+				<meta name="application-name" content="Election App 2020!" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-				<meta name="apple-mobile-web-app-title" content="Election App 2019!" />
-				<meta name="theme-color" content="#1E90FF" />
+				<meta name="apple-mobile-web-app-title" content="Election App 2020!" />
+
+				{/* (>>>>>>> STYLED-COMPONENTS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<) */}
+				{styledComponents}
 
 				{/* (>>>>>>> STYLES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<) */}
 				{assets.stylesheets 
@@ -66,17 +67,6 @@ function Html({ assets, content, store, graphqlState }) {
 			</body>
 		</>
 	);
-};
-
-Html.propTypes = {
-	assets: PropTypes.shape({ stylesheets: PropTypes.array, scripts: PropTypes.array }),
-	content: PropTypes.string,
-	// store: PropTypes.shape({ getState: PropTypes.func })
-};
-
-Html.defaultProps = {
-	assets: [],
-	content: '',
 };
 
 export default Html;
