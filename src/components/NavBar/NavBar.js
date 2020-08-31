@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { NavLinks } from './NavLinks';
 
+//	import styled from 'styled-components';
+//	const A = styled(Link)`
+//		color: #009900;
+//		text-decoration: none;
+//	`;
+
 
 export const NavBar = () => {
 

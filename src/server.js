@@ -9,6 +9,7 @@ import flushChunks from 'webpack-flush-chunks';
 import { HelmetProvider } from 'react-helmet-async';
 import serialize from 'serialize-javascript';
 import fetch from 'node-fetch';
+import { ServerStyleSheet } from 'styled-components';
 
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
@@ -29,7 +30,7 @@ import defineHeaders from './utils/defineHeaders';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink, gql } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
-import { getDataFromTree } from '@apollo/client/react/ssr';
+import { getDataFromTree, getMarkupFromTree } from '@apollo/client/react/ssr';
 
 //	provide for client ("to avoid network calls and mocking data"):
 //	https://github.com/apollographql/apollo-client/blob/master/docs/source/api/link/apollo-link-schema.md
@@ -110,6 +111,8 @@ export default ({ clientStats }) => async (req, res) => {
 	});
 
 	// =====================================================
+
+	const sheet = new ServerStyleSheet();
 
 	//	Composing a link chain:
 	//	Each link should represent a self-contained modification to a GraphQL operation.
@@ -334,9 +337,9 @@ export default ({ clientStats }) => async (req, res) => {
 		// await GraphQL data coming from the API server
 		// determines which queries are needed to render, then fetch them all
 		await getDataFromTree(component);
-		// await Promise.all([getDataFromTree(component)]);
+		//	await Promise.all([getDataFromTree(component)]);
 
-		const content = ReactDOM.renderToString(component);
+		const content = ReactDOM.renderToString(sheet.collectStyles(component));
 		const assets = flushChunks(clientStats, { chunkNames: flushChunkNames() });
 
 		if (__DISABLE_SSR__) {
@@ -358,13 +361,16 @@ export default ({ clientStats }) => async (req, res) => {
 
 		const graphqlInitialState = serialize(clientApollo.extract());
 
-		console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
+		// const styledComponents = sheet.getStyleTags();	// returns a string of multiple `<style>` tags
+		const styledComponents = sheet.getStyleElement();	// returns an array of React elements
+
+		// console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
 
 		const html = (
-			<Html assets={assets} content={content} store={reduxStore} graphqlState={graphqlInitialState} />
+			<Html assets={assets} styledComponents={styledComponents} content={content} store={reduxStore} graphqlState={graphqlInitialState} />
 		);
 
-		const ssrHtml = `<!DOCTYPE html><html lang="en-US">${ReactDOM.renderToString(html)}</html>`;
+		const ssrHtml = `<!DOCTYPE html><html lang="en">${ReactDOM.renderToString(html)}</html>`;
 		res.status(200).send(ssrHtml);
 	} catch (error) {
 		console.log('>>>> SERVER > RESPONSE > ERRRRRRROOOOORRRR!!!: ', error);
