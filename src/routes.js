@@ -19,7 +19,7 @@ const routes = [
 			{ path: '/about', component: About },
 			// { path: '/graphqlpage', component: GraphqlPage },
 			// { path: '/gridlayoutpage', component: GridLayout },
-			// { component: NotFound },
+			{ component: NotFound },
 		],
 	},
 ];

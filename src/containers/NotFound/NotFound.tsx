@@ -1,20 +1,27 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-//	import styles from './scss/NotFound.scss';
+import styled from 'styled-components';
 
-//	<h1 className={styles.notFoundUniqueColor}>Status Code 404!</h1>
+const StyledHeadingOne = styled.h1`
+	color: #000;
+`;
 
 export const NotFound: React.FC = () => {
 	return (
 		<div>
+
 			<Helmet title="Page Not Found" />
 
-			<h1>Status Code 404!</h1>
+			<div className="container">
 
-			<div>
+				<StyledHeadingOne className="mt-4 mb-3">Status Code 404!</StyledHeadingOne>
+
 				<div>
-					<p>Page Not Found!</p>
+					<div>
+						<p>Page Not Found!</p>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	);
