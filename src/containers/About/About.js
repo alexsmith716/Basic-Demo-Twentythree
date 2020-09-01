@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/Button';
 
+import styled from 'styled-components';
+
+const Box = styled.div({
+	background: '#009900',
+	height: '50px',
+	width: '150px'
+});
 
 const About = () => {
 
@@ -40,6 +47,8 @@ const About = () => {
 			<div className="container">
 
 				{/* ---------------------------------------------- */}
+
+				{/* <Box/> */}
 
 				<h1 className="mt-4 mb-3">About</h1>
 

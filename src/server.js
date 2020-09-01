@@ -361,10 +361,10 @@ export default ({ clientStats }) => async (req, res) => {
 
 		const graphqlInitialState = serialize(clientApollo.extract());
 
-		// const styledComponents = sheet.getStyleTags();	// returns a string of multiple `<style>` tags
-		const styledComponents = sheet.getStyleElement();	// returns an array of React elements
+		//	const styledComponents = sheet.getStyleTags();	// returns a string of multiple `<style>` tags
+		const styledComponents = sheet.getStyleElement();	// returns an array of React elements > ReactDOM.renderToString(sC)
 
-		// console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
+		console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
 
 		const html = (
 			<Html assets={assets} styledComponents={styledComponents} content={content} store={reduxStore} graphqlState={graphqlInitialState} />
