@@ -14,7 +14,7 @@
 		"check-types-w": "tsc --watch",
 		"check-types": "tsc --noEmit true",
 		"lint:stylesX": "stylelint '**/*.tsx'",
-		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}' --output-file stylelintReport.txt",
+		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}'",
 		"lint:js": "eslint ./src/server.js",
 		"lint:app": "eslint ./src/containers/App/App.js",
 		"lint:notfound": "eslint ./src/containers/NotFound/NotFound.tsx",
