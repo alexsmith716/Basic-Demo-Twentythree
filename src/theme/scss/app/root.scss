@@ -10,4 +10,15 @@
 
 	--bs-font-sans-serif: #{inspect($font-family-sans-serif)};
 	--bs-font-monospace: #{inspect($font-family-monospace)};
+
+	--primarily-color: #990099;
+
 }
+
+//	.button {
+//		background-color: var(--primarily-color);
+//	}
+
+//	const Button = styled.button`
+//		background-color: var(--primarily-color);
+//	`;

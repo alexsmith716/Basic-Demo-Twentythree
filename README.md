@@ -2,6 +2,10 @@
 
 ### UPDATE:
 
+convert global sass variables to theme object
+
+styled-components: code now dependent on specific framework
+
 "styled-components" generates an actual stylesheet with classes, 
 and attaches those classes to the DOM nodes of styled components via the `className` prop
 
