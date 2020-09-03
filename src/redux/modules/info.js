@@ -6,7 +6,7 @@ const LOAD_FAIL = 'redux-example/info/LOAD_FAIL';
 
 import { postRequestConcatExportASYNC } from '../../utils/mockAPI';
 
-const initialState = {
+export const initialState = {
 	loaded: false,
 	data: null,
 };
