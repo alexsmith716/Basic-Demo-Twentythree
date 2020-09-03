@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
-import Loading from '../Loading/Loading';
+import { Loading } from '../Loading';
 import { Button } from '../Button';
+const styles = require('./scss/InfoBar.scss');
+
 
 export const InfoBar = () => {
-
-	const styles = require('./scss/InfoBar.scss');
 
 	const data = useSelector(state => state.info.data);
 	const loading = useSelector(state => state.info.loading);

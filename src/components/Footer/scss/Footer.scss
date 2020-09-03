@@ -20,36 +20,6 @@
 	align-items: center;
 }
 
-.fontSizeThirtyTwoPixels {
-	color: #00cd00;
-	font-size: calculate-pixels-to-rem(32);
-}
-
-.fontSizeTwoRem {
-	color: #00cd00;
-	font-size: 2rem;
-}
-
-.fontSizeTwentyFourPixels {
-	color: #00cd00;
-	font-size: 24px;
-}
-
-.fontSizeOneAndHalfRem {
-	color: #00cd00;
-	font-size: 1.5rem;
-}
-
-.fontSizeSixteenPixels {
-	color: #00cd00;
-	font-size: 16px;
-}
-
-.fontSizeOneRem {
-	color: #00cd00;
-	font-size: 1rem;
-}
-
 .svgFooterHeadphones {
 	content: get-svg-icon('svg-headphones', $primary);
 	height: assign-unit-rem($font-size-base);
