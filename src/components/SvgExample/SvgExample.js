@@ -1,8 +1,7 @@
 import React from 'react';
+const styles = require('./scss/SvgExample.scss');
 
 export const SvgExample = () => {
-
-	const styles = require('./scss/SvgExample.scss');
 
 	return (
 

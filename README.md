@@ -2,6 +2,11 @@
 
 ### UPDATE:
 
+https://soofka.pl/entry/moving-from-sass-to-styled-components-with-snapshot-tests
+
+https://sass-lang.com/documentation/at-rules/import
+https://sass-lang.com/documentation/cli/migrator
+
 convert global sass variables to theme object
 
 styled-components: code now dependent on specific framework

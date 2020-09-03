@@ -6,6 +6,7 @@ const StyledHeadingOne = styled.h1`
 	color: #000;
 `;
 
+
 export const NotFound: React.FC = () => {
 	return (
 		<div>
