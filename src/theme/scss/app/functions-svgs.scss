@@ -15,7 +15,7 @@
 
 // -----------------------------------------
 
-@function get-svg-icon( $icon, $color: $svg-color-base ) {
+@function get-svg-icon( $icon, $color: '#212529' ) {
 
 	@if 'color' != type-of( $color ) {
 		@warn 'The requested color - "' + $color + '" - was not recognized as a Sass color value.';
