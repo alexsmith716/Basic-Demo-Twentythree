@@ -2,7 +2,7 @@ const baseValueOne = 1;
 const baseValueSixteen = 16;
 
 const baseColorsWhiteGrayBlack = {
-	white:    '#ffffff',
+	white: '#ffffff',
 	grayOne: '#f8f9fa',
 	grayTwo: '#e9ecef',
 	grayThree: '#dee2e6',
@@ -12,12 +12,21 @@ const baseColorsWhiteGrayBlack = {
 	graySeven: '#495057',
 	grayEight: '#343a40',
 	grayNine: '#212529',
-	black:    '#000000',
+	gggZZZ: '#990099',
+	black: '#000000',
+}
+
+const backgroundsStyled = {
+	syracuseOrange: '#f37321',
+	rutgersScarlet: '#ee363d',
 }
 
 export const theme = {
 	bodyColor: baseColorsWhiteGrayBlack.grayNine,
 	baseSvgColor: baseColorsWhiteGrayBlack.grayNine,
+	ppppppp: baseColorsWhiteGrayBlack.gggZZZ,
+	backgroundSyracuseOrange: `${backgroundsStyled.syracuseOrange}`,
+	backgroundRutgersScarlet: backgroundsStyled.rutgersScarlet,
 }
 
 export default theme;
