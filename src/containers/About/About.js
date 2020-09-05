@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/Button';
+import styled from 'styled-components';
+
+const AboutStyled = styled.div`
+  background-color: ${p => p.theme.backgroundRutgersScarlet};
+`;
 
 const About = () => {
 
@@ -29,7 +34,7 @@ const About = () => {
 
 	return (
 
-		<div>
+		<AboutStyled>
 
 			<Helmet title="About Us" />
 
@@ -353,7 +358,7 @@ const About = () => {
 				)}
 
 			</div>
-		</div>
+		</AboutStyled>
 	);
 }
 

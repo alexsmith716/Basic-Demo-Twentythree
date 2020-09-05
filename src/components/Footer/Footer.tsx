@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FooterStyled = styled.div`
+	background-color: ${p => p.theme.backgroundSyracuseOrange};
+`;
 
 
 export const Footer: React.FC = () => {
 	return (
-		<div className="bg-syracuse-orange">
+		<FooterStyled>
 			<div className="container">
 				<div className="flex-column-center pt-4 pb-4">
 					<div>Copyright &copy; {new Date().getFullYear()} · Election App {new Date().getFullYear()}</div>
@@ -14,6 +19,6 @@ export const Footer: React.FC = () => {
 					<div>Don't Forget To Vote!</div>
 				</div>
 			</div>
-		</div>
+		</FooterStyled>
 	);
 };

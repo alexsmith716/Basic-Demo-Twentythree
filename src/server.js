@@ -11,6 +11,9 @@ import serialize from 'serialize-javascript';
 import fetch from 'node-fetch';
 import { ServerStyleSheet } from 'styled-components';
 
+import { ThemeProvider } from 'styled-components';
+import theme from './theme/styled/theme';
+
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
 import { resolvers } from './graphql/resolvers/resolvers.js';
@@ -313,7 +316,9 @@ export default ({ clientStats }) => async (req, res) => {
 					<Provider store={store} {...providers}>
 						<Router history={history}>
 							<StaticRouter location={req.originalUrl} context={context}>
-								{renderRoutes(routes)}
+                <ThemeProvider theme={theme}>
+								  {renderRoutes(routes)}
+                </ThemeProvider>
 							</StaticRouter>
 						</Router>
 					</Provider>
