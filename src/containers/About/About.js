@@ -2,19 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/Button';
 
-import styled from 'styled-components';
-
-const Box = styled.div({
-	background: '#009900',
-	height: '50px',
-	width: '150px'
-});
-
 const About = () => {
 
 	const aboutImageMain = require('../../theme/images/about-750-450.png');
 	const aboutImageOurCustomers = require('../../theme/images/about-500-300.png');
-	const styles = require('./scss/About.scss');
 
 	const [toggleCustomerState, setToggleCustomerState] = useState(true);
 
@@ -38,7 +29,7 @@ const About = () => {
 
 	return (
 
-		<div className={styles.about}>
+		<div>
 
 			<Helmet title="About Us" />
 
@@ -47,8 +38,6 @@ const About = () => {
 			<div className="container">
 
 				{/* ---------------------------------------------- */}
-
-				{/* <Box/> */}
 
 				<h1 className="mt-4 mb-3">About</h1>
 

@@ -11,6 +11,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import localForage from 'localforage';
 import { getStoredState } from 'redux-persist';
 
+import { ThemeProvider } from 'styled-components';
+
 import {
 	ApolloProvider,
 	ApolloClient,
@@ -26,6 +28,8 @@ import defineHeaders from './utils/defineHeaders';
 import { Provider } from 'react-redux';
 import asyncGetPromises from './utils/asyncGetPromises';
 
+import theme from './theme/styled/theme';
+
 import RouterTrigger from './components/RouterTrigger/RouterTrigger';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -34,6 +38,8 @@ import apiClient from './helpers/apiClient';
 import configureStore from './redux/configureStore';
 import isOnline from './utils/isOnline';
 import './utils/navbarDOMCollapse';
+
+
 
 const persistConfig = {
 	key: 'root',
@@ -140,10 +146,12 @@ const providers = {
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
-						<ScrollToTop />
-						<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-							{renderRoutes(_routes)}
-						</RouterTrigger>
+            <ThemeProvider theme={theme}>
+              <ScrollToTop />
+              <RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
+              	{renderRoutes(_routes)}
+              </RouterTrigger>
+            </ThemeProvider>
 					</Router>
 				</Provider>
 			</HelmetProvider>
