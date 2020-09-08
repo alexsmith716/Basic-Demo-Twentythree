@@ -19,6 +19,7 @@
 		"lint:app": "eslint ./src/containers/App/App.js",
 		"lint:notfound": "eslint ./src/containers/NotFound/NotFound.tsx",
 		"lint:footer": "eslint ./src/components/Footer/Footer.tsx",
+    "lint:Root": "eslint ./src/containers/Root/Root.tsx",
 		"lint": "yarn lint:scss && yarn lint:js",
 		"format": "prettier --config .prettierrc --write ./bin/start.js"
 	},
