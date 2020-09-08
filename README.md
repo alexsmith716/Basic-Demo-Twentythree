@@ -23,6 +23,24 @@ but boost the specificity of "styled-components" style rules with "babel-plugin-
 
 ### TO-DO:
 
+"Book Card" > "Bookshelf"
+
+API > GET /books:
+Returns an array of book objects
+`
+[
+  {
+    "description": String,
+    "imageUrl": String,
+    "author": String,
+    "title": String
+  }
+]
+`
+
+Go over "core-js" & "regenerator-runtime"
+"https://github.com/facebook/regenerator/tree/master/packages/regenerator-transform"
+
 'cssnano-webpack-plugin'
 'optimize-css-assets-webpack-plugin'
 
