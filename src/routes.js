@@ -1,3 +1,4 @@
+import { Root } from './containers/Root';
 import { App } from './containers/App';
 import { Home } from './containers/Home';
 import { NotFound } from './containers/NotFound';
@@ -10,52 +11,53 @@ import { preloadData as preloadDataApp } from './containers/App/preloadData';
 
 import './theme/scss/global/styles.global.scss';
 
+			//	{
+			//		path: '/graphqlpage',
+			//		exact: true,
+			//		component: GraphqlPage,
+			//	}, {
+			//		path: '/gridlayoutpage',
+			//		exact: true,
+			//		component: GridLayout,
+			//	}, 
+
 const routes = [{
+	component: Root,
 	path: '/',
-	component: App,
-	loadData: preloadDataApp,
-	meta: {
-		title: 'Basic Demo Twentythree',
-		description: 'Component App'
-	},
 	routes: [
 		{
 			path: '/',
-			exact: true,
-			component: Home,
+			component: App,
+			loadData: preloadDataApp,
 			meta: {
 				title: 'Basic Demo Twentythree',
-				description: 'Component Home'
-			}
-		},
-		{
-			path: '/about',
-			exact: true,
-			component: About,
-			meta: {
-				title: 'Basic Demo Twentythree',
-				description: 'Component About'
-			}
-		},
-		//	{
-		//		path: '/graphqlpage',
-		//		exact: true,
-		//		component: GraphqlPage,
-		//	},
-		//	{
-		//		path: '/gridlayoutpage',
-		//		exact: true,
-		//		component: GridLayout,
-		//	},
-		{
-			path: '*',
-			component: NotFound,
-			meta: {
-				title: 'Basic Demo Twentythree',
-				description: 'NotFound 404'
-			}
-		}
-	]
+				description: 'Component App'
+			},
+			routes: [{
+				path: '/',
+				exact: true,
+				component: Home,
+				meta: {
+					title: 'Basic Demo Twentythree',
+					description: 'Component Home'
+				}
+			}, {
+				path: '/about',
+				exact: true,
+				component: About,
+				meta: {
+					title: 'Basic Demo Twentythree',
+					description: 'Component About'
+				}
+			}, {
+				path: '*',
+				component: NotFound,
+				meta: {
+					title: 'Basic Demo Twentythree',
+					description: 'NotFound 404'
+				}
+			}]
+		}]
 }];
 
 export default routes;
