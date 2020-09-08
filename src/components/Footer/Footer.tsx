@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
 				<div className="flex-column-center pt-4 pb-4">
 					<div>Copyright &copy; {new Date().getFullYear()} · Election App {new Date().getFullYear()}</div>
 					<div className="flex-row-center">
-						<span className="color-gold"></span>
+						<span className="color-gold">svgFooterHeadphones</span>
 						<span className="font-norwester color-gold">Footer Headphones</span>
 					</div>
 					<div>Don't Forget To Vote!</div>

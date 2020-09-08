@@ -12,7 +12,6 @@ const baseColorsWhiteGrayBlack = {
 	graySeven: '#495057',
 	grayEight: '#343a40',
 	grayNine: '#212529',
-	gggZZZ: '#990099',
 	black: '#000000',
 }
 
@@ -24,7 +23,6 @@ const backgroundsStyled = {
 export const theme = {
 	bodyColor: baseColorsWhiteGrayBlack.grayNine,
 	baseSvgColor: baseColorsWhiteGrayBlack.grayNine,
-	ppppppp: baseColorsWhiteGrayBlack.gggZZZ,
 	backgroundSyracuseOrange: `${backgroundsStyled.syracuseOrange}`,
 	backgroundRutgersScarlet: backgroundsStyled.rutgersScarlet,
 }

@@ -13,13 +13,7 @@ import { getStoredState } from 'redux-persist';
 
 import { ThemeProvider } from 'styled-components';
 
-import {
-	ApolloProvider,
-	ApolloClient,
-	createHttpLink,
-	InMemoryCache,
-	ApolloLink
-} from '@apollo/client';
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
 
@@ -31,15 +25,13 @@ import asyncGetPromises from './utils/asyncGetPromises';
 import theme from './theme/styled/theme';
 
 import RouterTrigger from './components/RouterTrigger/RouterTrigger';
-import ScrollToTop from './components/ScrollToTop';
+import { ScrollToTop } from './components/ScrollToTop';
 
 import routes from './routes';
 import apiClient from './helpers/apiClient';
 import configureStore from './redux/configureStore';
 import isOnline from './utils/isOnline';
 import './utils/navbarDOMCollapse';
-
-
 
 const persistConfig = {
 	key: 'root',
@@ -163,34 +155,6 @@ const providers = {
 			ReactDOM.render(element, dest);
 		}
 	};
-	//	const hydrate = (_routes) => {
-	//		const element = (
-	//			<HelmetProvider>
-	//				<ApolloProvider client={clientApollo}>
-	//					<Provider store={store} {...providers}>
-	//						{/* ---------------------------------------------------------------- */}
-	//						<Router history={history}>
-	//							{/* ------------- */}
-	//							<ScrollToTop />
-	//							{/* ------------- */}
-	//							{/* ------------------------------------------------- */}
-	//							<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-	//								{renderRoutes(_routes)}
-	//							</RouterTrigger>
-	//							{/* ------------- */}
-	//						</Router>
-	//						{/* ---------------------------------------------------------------- */}
-	//					</Provider>
-	//				</ApolloProvider>
-	//			</HelmetProvider>
-	//		);
-
-	//		if (dest.hasChildNodes()) {
-	//			ReactDOM.hydrate(element, dest);
-	//		} else {
-	//			ReactDOM.render(element, dest);
-	//		}
-	//	};
 
 	hydrate(routes);
 
