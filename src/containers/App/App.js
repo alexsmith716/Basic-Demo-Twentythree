@@ -1,7 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // import { SvgExample } from '../../components/SvgExample';
 import { NavBar } from '../../components/NavBar';
@@ -19,37 +17,31 @@ export const App = (props) => {
 
 		<div className={styles.app}>
 
-			<HelmetProvider>
+      {/* ------------- Navbar ------------- */}
 
-				<Helmet {...config.app.head} />
+      <NavBar />
 
-				{/* ------------- Navbar ------------- */}
+      {/* ------------- Main Content ------------- */}
 
-				<NavBar />
+      {renderRoutes(props.route.routes)}
 
-				{/* ------------- Main Content ------------- */}
+      {/* --------------- Svg Examples ----------------- */}
 
-				{renderRoutes(props.route.routes)}
+      {/* <SvgExample /> */}
 
-				{/* --------------- Svg Examples ----------------- */}
+      {/* --------------- InfoBar ---------------- */}
 
-				{/* <SvgExample /> */}
+      <InfoBar />
 
-				{/* --------------- InfoBar ---------------- */}
+      {/* ------------- Device State ----------- */}
 
-				<InfoBar />
+      <DeviceState />
 
-				{/* ------------- Device State ----------- */}
+      {/* --------------- Footer ----------------- */}
 
-				<DeviceState />
+      <Footer />
 
-				{/* --------------- Footer ----------------- */}
-
-				<Footer />
-
-				{/* --------------- Modals ----------------- */}
-
-			</HelmetProvider>
+      {/* --------------- Modals ----------------- */}
 
 		</div>
 	);

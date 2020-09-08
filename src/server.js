@@ -12,7 +12,7 @@ import fetch from 'node-fetch';
 import { ServerStyleSheet } from 'styled-components';
 
 import { ThemeProvider } from 'styled-components';
-import theme from './theme/styled/theme';
+import theme from './styled/stylesTheme/theme';
 
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
