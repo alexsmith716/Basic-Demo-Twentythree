@@ -11,16 +11,6 @@ import { preloadData as preloadDataApp } from './containers/App/preloadData';
 
 import './theme/scss/global/styles.global.scss';
 
-			//	{
-			//		path: '/graphqlpage',
-			//		exact: true,
-			//		component: GraphqlPage,
-			//	}, {
-			//		path: '/gridlayoutpage',
-			//		exact: true,
-			//		component: GridLayout,
-			//	}, 
-
 const routes = [{
 	component: Root,
 	path: '/',

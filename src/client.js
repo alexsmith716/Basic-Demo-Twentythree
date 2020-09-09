@@ -22,7 +22,7 @@ import defineHeaders from './utils/defineHeaders';
 import { Provider } from 'react-redux';
 import asyncGetPromises from './utils/asyncGetPromises';
 
-import theme from './styled/stylesTheme/theme';
+import theme from './styled/theme';
 
 import RouterTrigger from './components/RouterTrigger/RouterTrigger';
 import { ScrollToTop } from './components/ScrollToTop';
