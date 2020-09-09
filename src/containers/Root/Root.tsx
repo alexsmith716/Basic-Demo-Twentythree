@@ -10,12 +10,12 @@ interface RootProps {
 
 export const Root = ({ route }: RootProps) => {
 	return (
-		<div>
+		<>
 			<HelmetProvider>
 				<Helmet {...config.app.head} />
 				{/* ------------- App ------------- */}
 				{renderRoutes(route.routes)}
 			</HelmetProvider>
-		</div>
+		</>
 	);
 };
