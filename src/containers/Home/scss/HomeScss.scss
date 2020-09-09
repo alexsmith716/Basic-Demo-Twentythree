@@ -1,5 +1,4 @@
 @import '../../../theme/scss/app/functions-assign-unit.scss';
-@import '../../../theme/scss/app/mixins.scss';
 
 .home {
 	.specialHomeColor {
@@ -18,37 +17,40 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-position-x: 32%;
-	@include background-cover;
+	background-size: cover;
 
 	text-align: center;
-	@include color-crimson;
-	@include tester-font;
+	// @include color-crimson;
+  color: #dc143c;
+	// @include tester-font;
 
 	.headingMain {
 		font-size: calculate-pixels-to-rem(76);
 		font-weight: 600;
-		@include color-dodgerblue-4;
-		@include tester-font3;
+		// @include color-dodgerblue-4;
+    color: #1e90ff;
+		// @include tester-font3;
 	}
 
 	.headingMainSub {
 		font-size: calculate-pixels-to-rem(42);
 		font-weight: 400;
-		@include color-darkorange;
+		// @include color-darkorange;
+    color: #cd6600;
 	}
 
 	.blurb {
 		margin-top: calculate-pixels-to-rem(20);
 		margin-bottom: calculate-pixels-to-rem(5);
 		font-size: 1.2rem;
-		@include tester-font4;
+		// @include tester-font4;
 	}
 
 	.blurbElipsis {
 		margin-left: calculate-pixels-to-rem(25);
 		margin-bottom: calculate-pixels-to-rem(35);
 		font-size: 1.2rem;
-		@include tester-font4;
+		// @include tester-font4;
 	}
 
 	@media (min-width: 768px) {

@@ -2,6 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
+const NotFoundStyled = styled.div`
+  background-color: ${p => p.theme.rutgersScarlet};
+`;
+
 const StyledHeadingOne = styled.h1`
 	color: #000;
 `;
@@ -9,7 +13,7 @@ const StyledHeadingOne = styled.h1`
 
 export const NotFound: React.FC = () => {
 	return (
-		<div>
+		<NotFoundStyled>
 			<Helmet title="Page Not Found" />
 			<div className="container">
 				<StyledHeadingOne className="mt-4 mb-3">Status Code 404!</StyledHeadingOne>
@@ -19,6 +23,6 @@ export const NotFound: React.FC = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</NotFoundStyled>
 	);
 };
