@@ -4,7 +4,7 @@ import { Button } from '../../components/Button';
 import styled from 'styled-components';
 
 const AboutStyled = styled.div`
-  background-color: ${p => p.theme.backgroundRutgersScarlet};
+  background-color: ${p => p.theme.colors.ivory};
 `;
 
 const About = () => {
