@@ -12,7 +12,7 @@ import fetch from 'node-fetch';
 import { ServerStyleSheet } from 'styled-components';
 
 import { ThemeProvider } from 'styled-components';
-import theme from './styled/stylesTheme/theme';
+import theme from './styled/theme';
 
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
@@ -191,8 +191,9 @@ export default ({ clientStats }) => async (req, res) => {
 		ReactDOM.renderToNodeStream(<Html assets={a} store={store} />).pipe(res);
 	}
 
+  await asyncGetPromises(routes, req.path, store);
+
 	try {
-		await asyncGetPromises(routes, req.path, store);
 
 		console.log('>>>> SERVER > InMemoryCache > CACHE > cache.extract() 1: ', cache.extract());
 
@@ -313,7 +314,7 @@ export default ({ clientStats }) => async (req, res) => {
 		const component = (
 			<HelmetProvider context={helmetContext}>
 				<ApolloProvider client={clientApollo}>
-					<Provider store={store} {...providers}>
+					<Provider store={store}>
 						<Router history={history}>
 							<StaticRouter location={req.originalUrl} context={context}>
                 <ThemeProvider theme={theme}>
