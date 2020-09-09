@@ -13,8 +13,7 @@ interface StateInfo {
   info: any
 }
 
-
-export const InfoBar: React.FC = () => {
+export const InfoBar = () => {
 
 	const dispatch = useDispatch();
 

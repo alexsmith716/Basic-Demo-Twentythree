@@ -4,12 +4,11 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import config from '../../../config/config';
 
-export interface RootProps {
+interface RootProps {
 	route: any;
 }
 
-export const Root: React.FC = ({ route }: RootProps) => {
-	// console.log('>>>>>>>>>>>>>>>>>>>>>>>> Root > route: ', route);
+export const Root = ({ route }: RootProps) => {
 	return (
 		<div>
 			<HelmetProvider>

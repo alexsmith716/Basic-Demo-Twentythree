@@ -15,7 +15,8 @@ const dot = keyframes`
 	100% {
 		opacity: 1;
 	}
-`
+`;
+
 const DotOne = styled.span`
 	opacity: 10;
 	animation: ${dot} 1.3s infinite;
@@ -36,6 +37,11 @@ const DotThree = styled.span`
 
 export const Loading = ({ text }: LoadingProps) => {
 	return (
-		<div>{text}<DotOne>.</DotOne><DotTwo>.</DotTwo><DotThree>.</DotThree></div>
+		<div>
+			{text}
+			<DotOne>.</DotOne>
+			<DotTwo>.</DotTwo>
+			<DotThree>.</DotThree>
+		</div>
 	);
 };

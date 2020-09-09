@@ -16,10 +16,9 @@
 		"lint:stylesX": "stylelint '**/*.tsx'",
 		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}'",
 		"lint:js": "eslint ./src/server.js",
-		"lint:app": "eslint ./src/containers/App/App.js",
-		"lint:notfound": "eslint ./src/containers/NotFound/NotFound.tsx",
-		"lint:footer": "eslint ./src/components/Footer/Footer.tsx",
+		"lint:App": "eslint ./src/containers/App/App.tsx",
     "lint:Root": "eslint ./src/containers/Root/Root.tsx",
+		"lint:Loading": "eslint ./src/components/Loading/Loading.tsx",
 		"lint": "yarn lint:scss && yarn lint:js",
 		"format": "prettier --config .prettierrc --write ./bin/start.js"
 	},
