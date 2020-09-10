@@ -5,8 +5,12 @@ import { Loading } from '../Loading';
 import { Button } from '../Button';
 import styled from 'styled-components';
 
-const InfoBarStyled = styled.div`
-	padding: 16px;
+const SubContainer = styled.div`
+  background-color: ${p => p.theme.colors.lightskyblue};
+`;
+
+const InfoBarContainer = styled.div`
+  padding: 16px;
 `;
 
 interface StateInfo {
@@ -39,8 +43,8 @@ export const InfoBar = () => {
 	return (
 
 		<div className="container">
-			<div className="flex-column-center bg-lightskyblue-1 mb-5">
-				<InfoBarStyled className="flex-column-center">
+			<SubContainer className="flex-column-center mb-5">
+				<InfoBarContainer className="flex-column-center">
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>> LOADING >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{loading && (
@@ -70,8 +74,8 @@ export const InfoBar = () => {
 							</div>
 						</>
 					)}
-				</InfoBarStyled>
-			</div>
+				</InfoBarContainer>
+			</SubContainer>
 		</div>
 	);
 }
