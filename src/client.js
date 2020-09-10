@@ -22,7 +22,7 @@ import defineHeaders from './utils/defineHeaders';
 import { Provider } from 'react-redux';
 import asyncGetPromises from './utils/asyncGetPromises';
 
-import theme from './styled/theme';
+import theme from './styled/Theme';
 
 import RouterTrigger from './components/RouterTrigger/RouterTrigger';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -50,8 +50,8 @@ const persistConfig = {
 //  const spinnerContainer = document.createElement('div');
 //  spinnerContainer.classList.add('d-inline-flex', 'spinner-layered', 'text-light');
 //  // spinnerContainer.className = 'd-inline-flex spinner-layered text-light';
-//  const dest = document.getElementById('react-root');
-//  document.body.insertBefore(spinnerContainer, dest);
+const dest = document.getElementById('react-root');
+// document.body.insertBefore(spinnerContainer, dest);
 
 const client = apiClient();
 
