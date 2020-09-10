@@ -3,15 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
 import { Loading } from '../Loading';
 import { Button } from '../Button';
-import styled from 'styled-components';
 
-const SubContainer = styled.div`
-  background-color: ${p => p.theme.colors.lightskyblue};
-`;
-
-const InfoBarContainer = styled.div`
-  padding: 16px;
-`;
+import * as Styles from './styles';
 
 interface StateInfo {
   info: any
@@ -43,8 +36,8 @@ export const InfoBar = () => {
 	return (
 
 		<div className="container">
-			<SubContainer className="flex-column-center mb-5">
-				<InfoBarContainer className="flex-column-center">
+			<Styles.SubContainer className="flex-column-center mb-5">
+				<Styles.InfoBarContainer className="flex-column-center">
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>> LOADING >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{loading && (
@@ -74,8 +67,8 @@ export const InfoBar = () => {
 							</div>
 						</>
 					)}
-				</InfoBarContainer>
-			</SubContainer>
+				</Styles.InfoBarContainer>
+			</Styles.SubContainer>
 		</div>
 	);
 }

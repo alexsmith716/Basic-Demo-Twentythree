@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/Button';
-import styled from 'styled-components';
 
-const AboutStyled = styled.div`
-  // background-color: ${p => p.theme.colors.ivory};
-`;
+import * as Styles from './styles';
+
 
 const About = () => {
 
@@ -34,7 +32,7 @@ const About = () => {
 
 	return (
 
-		<AboutStyled>
+		<>
 
 			<Helmet title="About Us" />
 
@@ -48,7 +46,7 @@ const About = () => {
 
 				{/* ---------------------------------------------- */}
 
-				<div className="row-grid grid-six bg-lightskyblue-1 mb-5">
+				<Styles.SubContainer className="row-grid grid-six mb-5">
 
 					<div className="col-grid mb-4">
 						<img className="img-fluid rounded" src={aboutImageMain} alt="" />
@@ -63,7 +61,7 @@ const About = () => {
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
 					</div>
-				</div>
+				</Styles.SubContainer>
 
 				{/* ---------------------------------------------- */}
 
@@ -358,7 +356,7 @@ const About = () => {
 				)}
 
 			</div>
-		</AboutStyled>
+		</>
 	);
 }
 
