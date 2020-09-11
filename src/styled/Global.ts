@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		font-size: 1;
 		font-weight: 400;
+		font-display: fallback;
 		line-height: 1.5;
 		color: ${Colors.grayNine};
 		text-align: left;

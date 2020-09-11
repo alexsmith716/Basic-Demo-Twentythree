@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { NavLinks } from './NavLinks';
-
-//	import styled from 'styled-components';
-//	const A = styled(Link)`
-//		color: #009900;
-//		text-decoration: none;
-//	`;
+import { navLinks } from './navLinks';
+import * as Styles from './styles';
 
 
 export const NavBar = () => {
@@ -14,17 +8,17 @@ export const NavBar = () => {
 	const [clicked, setClicked] = useState(false);
 
 	useEffect(() => {
-			//	componentDidMount
+			//  componentDidMount
 			console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidMount');
 
-			//	componentDidUpdate
+			//  componentDidUpdate
 			if (clicked) {
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidUpdate > clicked: ', clicked);
 			}
 
-			//	componentWillUnmount
+			//  componentWillUnmount
 			return () => {
-				//	some effects might require cleanup
+				//  some effects might require cleanup
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase');
 			};
 		},
@@ -33,15 +27,15 @@ export const NavBar = () => {
 
 	return (
 
-		<nav className="fixed-top navbar">
+		<Styles.NavBar className="navbar">
 
 			<div className="container">
 
-				<div className="navbar-expand">
+				<Styles.Expand>
 
-					<Link to='/' className="js-scroll-trigger navbar-brand" onClick={() => setClicked(false)}>Election App</Link>
+					<Styles.NavBarBrandLink to='/' className="js-scroll-trigger" onClick={() => setClicked(false)}>Election App</Styles.NavBarBrandLink>
 
-					<div className="navbar-toggler-icon" onClick={() => setClicked(!clicked)}>
+					<Styles.Toggler onClick={() => setClicked(!clicked)}>
 						{clicked && (
 							<div className="navbar-close"></div>
 						)}
@@ -49,27 +43,27 @@ export const NavBar = () => {
 						{!clicked && (
 							<div className="navbar-open"></div>
 						)}
-					</div>
+					</Styles.Toggler>
 
-					<div className="navbar-collapse">
+					<Styles.Collapse>
 
-						<ul className={ clicked ? 'navbar-nav active' : 'navbar-nav' }>
+						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'active' : '' }>
 
-							{ NavLinks.map((item, index) => {
+							{ navLinks.map((item, index) => {
 								return (
 									<li key={index}>
-										<Link to={item.url} className={`js-scroll-trigger ${item.navLink}`} onClick={() => setClicked(false)}>
+										<Styles.NavBarNavLink to={item.url} className={`js-scroll-trigger`} onClick={() => setClicked(false)}>
 											{item.title}
-										</Link>
+										</Styles.NavBarNavLink>
 									</li>
 								)
 							}) }
 
-						</ul>
+						</Styles.NavBarNav>
 
-					</div>
-				</div>
+					</Styles.Collapse>
+				</Styles.Expand>
 			</div>
-		</nav>
+		</Styles.NavBar>
 	);
 }

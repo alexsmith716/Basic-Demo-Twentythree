@@ -3,11 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
 import { Loading } from '../Loading';
 import { Button } from '../Button';
-
 import * as Styles from './styles';
 
 interface StateInfo {
-  info: any
+	info: any
 }
 
 export const InfoBar = () => {

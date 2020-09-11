@@ -1,17 +1,17 @@
-export const NavLinks = [
+export const navLinks = [
 	{
 		title: 'About',
 		url: '/about',
-		navLink: 'nav-link'
+		linkType: 'navLink',
 	},
 	{
 		title: 'GraphqlPage',
 		url: '/stickyfooter',
-		navLink: 'nav-link'
+		linkType: 'navLink',
 	},
 	{
 		title: 'GridLayout',
 		url: '#',
-		navLink: 'nav-link'
+		linkType: 'navLink',
 	},
 ]
