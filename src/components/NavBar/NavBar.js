@@ -47,7 +47,7 @@ export const NavBar = () => {
 
 					<Styles.Collapse>
 
-						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'active' : '' }>
+						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'clicked' : '' }>
 
 							{ navLinks.map((item, index) => {
 								return (
