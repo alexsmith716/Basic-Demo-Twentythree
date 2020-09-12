@@ -462,4 +462,8 @@ export const GlobalStyle = createGlobalStyle`
 
 	// ========================================
 
+	.text-break {
+		word-wrap: break-word !important;
+	}
+
 `;
