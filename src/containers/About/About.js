@@ -6,8 +6,8 @@ import * as Styles from './styles';
 
 const About = () => {
 
-	const aboutImageMain = require('../../theme/images/about-750-450.png');
-	const aboutImageOurCustomers = require('../../theme/images/about-500-300.png');
+	const aboutImageMain = require('../../assets/images/about-750-450.png');
+	const aboutImageOurCustomers = require('../../assets/images/about-500-300.png');
 
 	const [toggleCustomerState, setToggleCustomerState] = useState(true);
 

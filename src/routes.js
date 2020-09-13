@@ -9,6 +9,8 @@ import About from './containers/About/Loadable';
 
 import { preloadData as preloadDataApp } from './containers/App/preloadData';
 
+//  `createGlobalStyle`
+import './styled/fonts.css';
 import './theme/scss/global/styles.global.scss';
 
 const routes = [{

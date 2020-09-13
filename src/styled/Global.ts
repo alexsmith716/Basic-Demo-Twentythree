@@ -1,4 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
+//  helper method to write global CSS
+//  it does not return a component, but adds the styles to the stylesheet directly
+//	not encouraged. use it once per app at most contained in a single file
+//	only use it for `@font-face` body styling
+
+//	createGlobalStyle`
+//		@font-face {
+//			font-family: "Operator Mono";
+//			src: url("../fonts/Operator-Mono.ttf");
+//		}
+//		body {
+//			padding-top: 56px;
+//		}
+//	`
 
 import { Colors } from './Colors';
 
@@ -465,5 +479,4 @@ export const GlobalStyle = createGlobalStyle`
 	.text-break {
 		word-wrap: break-word !important;
 	}
-
 `;

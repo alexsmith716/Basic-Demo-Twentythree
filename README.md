@@ -2,6 +2,12 @@
 
 ### UPDATE:
 
+"@apollo/client": "^3.2.0-beta.12",
+"cross-fetch": "^3.0.6",
+"mongoose": "^5.10.5",
+"node-fetch": "3.0.0-beta.9",
+"serialize-javascript": "^5.0.1",
+
 convert global sass variables to theme object
 
 styled-components: code now dependent on specific framework

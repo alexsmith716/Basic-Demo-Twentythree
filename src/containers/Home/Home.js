@@ -1,5 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Button } from '../../components/Button';
+import * as Styles from './styles';
 
 export const Home = () => {
 
@@ -26,7 +28,9 @@ export const Home = () => {
 					<div className={styles.blurbElipsis}>... join the conversation.</div>
 
 					<div>
-						<a href="#">Sign Up Now »</a>
+            <Button type="button" className="btn-primary" onClick={() => false}>
+              Sign Up Now »
+            </Button>
 					</div>
 
 				</div>
