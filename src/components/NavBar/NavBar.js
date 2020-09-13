@@ -52,7 +52,7 @@ export const NavBar = () => {
 							{ navLinks.map((item, index) => {
 								return (
 									<li key={index}>
-										<Styles.NavBarNavLink to={item.url} className={`js-scroll-trigger`} onClick={() => setClicked(false)}>
+										<Styles.NavBarNavLink to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
 											{item.title}
 										</Styles.NavBarNavLink>
 									</li>
