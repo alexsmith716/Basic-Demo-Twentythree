@@ -1,41 +1,36 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Button } from '../../components/Button';
 import * as Styles from './styles';
 
 export const Home = () => {
 
-	const styles = require('./styles/HomeStyles.scss');
-
 	return (
 
-		<div className={styles.home}>
+		<>
 
 			<Helmet title="Home" />
 
 			{/* ---------------------------------------------- */}
 
-			<div className={`mb-5 ${styles.masthead}`}>
+			<Styles.Masthead className="mb-5">
 
 				<div className="container">
 
-					<div className={`${styles.headingMain}`}>App 2020</div>
+					<Styles.MastheadHeadingOne>App 2020</Styles.MastheadHeadingOne>
 
-					<div className={`font-tester-font2 ${styles.headingMainSub}`}>The Primary is right around the corner!</div>
+					<Styles.MastheadHeadingTwo>The Primary is right around the corner!</Styles.MastheadHeadingTwo>
 
-					<div className={styles.blurb}>What are you and others saying?</div>
+					<Styles.MastheadBlurb>What are you and others saying?</Styles.MastheadBlurb>
 
-					<div className={styles.blurbElipsis}>... join the conversation.</div>
+					<Styles.MastheadBlurbElipsis>... join the conversation.</Styles.MastheadBlurbElipsis>
 
-					<div>
-            <Button type="button" className="btn-primary" onClick={() => false}>
-              Sign Up Now »
-            </Button>
-					</div>
+					<Styles.MastheadButton type="button" className="btn-primary" onClick={() => false}>
+						Sign Up Now »
+					</Styles.MastheadButton>
 
 				</div>
 
-			</div>
+			</Styles.Masthead>
 
 			{/* ---------------------------------------------- */}
 
@@ -82,6 +77,6 @@ export const Home = () => {
 				</div>
 
 			</div>
-		</div>
+		</>
 	);
 }
