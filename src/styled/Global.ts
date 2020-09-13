@@ -22,12 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		padding: 0;
 	}
-	
-	html {
-		font-family: sans-serif;
-		line-height: 1.15;
-	}
-	
+
 	body {
 		padding-top: 56px;
 		margin: 0;
@@ -48,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 	
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 0;
-		margin-bottom: 0.5rem;
+		// margin-bottom: 0.5rem;
 	}
 	
 	img {
@@ -479,4 +474,13 @@ export const GlobalStyle = createGlobalStyle`
 	.text-break {
 		word-wrap: break-word !important;
 	}
+
+	// ========================================
+
+	.container-padding-border-radius-2 {
+		padding: 10px 10px;
+		border: 2px solid #b0c4de;
+		border-radius: 3px;
+	}
+
 `;

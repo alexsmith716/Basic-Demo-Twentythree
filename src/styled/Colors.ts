@@ -27,4 +27,6 @@ export const Colors = {
 	cadetblue: '#8ee5ee',
 	syracuseOrange: '#f37321',
 	rutgersScarlet: '#ee363d',
+	dodgerblue: '#104e8b',
+	darkorange: '#cd6600',
 };
