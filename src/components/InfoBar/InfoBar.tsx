@@ -35,7 +35,7 @@ export const InfoBar = () => {
 	return (
 
 		<div className="container">
-			<Styles.SubContainer className="flex-column-center mb-5">
+			<Styles.InfoBarContainerBgColor className="flex-column-center mb-5">
 				<Styles.InfoBarContainer className="flex-column-center">
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>> LOADING >>>>>>>>>>>>>>>>>>>>>>>>) */}
@@ -54,7 +54,7 @@ export const InfoBar = () => {
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>>>> LOADED >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{!loading && (
-						<>
+						<Styles.InfoBarContainerStyled className="flex-column-center">
 							<div>InfoBar message: '<Styles.DataMessage>{data ? data.message : 'no message!'}</Styles.DataMessage>'</div>
 							<div>{data && new Date(data.time).toString()}</div>
 							<div>{data && data.timeElapsed}</div>
@@ -64,10 +64,10 @@ export const InfoBar = () => {
 									Reload from server
 								</Button>
 							</div>
-						</>
+						</Styles.InfoBarContainerStyled>
 					)}
 				</Styles.InfoBarContainer>
-			</Styles.SubContainer>
+			</Styles.InfoBarContainerBgColor>
 		</div>
 	);
 }
