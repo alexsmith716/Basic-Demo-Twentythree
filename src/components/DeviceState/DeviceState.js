@@ -30,7 +30,6 @@ export const DeviceState = () => {
 
 				</Styles.DeviceStateStyled>
 			</div>
-
 		</div>
 	);
 }
