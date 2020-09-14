@@ -13,7 +13,6 @@ export const Masthead = styled.div`
 	background-size: cover;
 	text-align: center;
 
-	// crimson
 	color: #dc143c;
 	font-family: 'Phosphate', 'Desdemona', 'Noteworthy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -25,7 +24,6 @@ export const Masthead = styled.div`
 export const MastheadHeadingOne = styled.h1`
 	font-size: 61px;
 	font-weight: 600;
-	// dodgerblue;
 	color: #104e8b;
 	font-family: 'Stencil', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -40,7 +38,6 @@ export const MastheadHeadingOne = styled.h1`
 
 export const MastheadHeadingTwo = styled.h2`
 	font-size: 2rem;
-	// darkorange;
 	color: #cd6600;
 	font-family: 'Desdemona', 'Noteworthy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 

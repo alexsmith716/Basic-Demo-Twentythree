@@ -1,24 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const FooterStyled = styled.div`
-	background-color: ${p => p.theme.syracuseOrange};
-`;
+import * as Styles from './styles';
 
 
 export const Footer: React.FC = () => {
 	return (
-		<FooterStyled>
+		<Styles.FooterStyled>
 			<div className="container">
-				<div className="flex-column-center pt-4 pb-4">
+
+				<Styles.FooterContainer className="flex-column-center pt-4 pb-4">
+
 					<div>Copyright &copy; {new Date().getFullYear()} · Election App {new Date().getFullYear()}</div>
+
 					<div className="flex-row-center">
-						<span className="color-gold">svgFooterHeadphones</span>
-						<span className="font-norwester color-gold">Footer Headphones</span>
+
+						<Styles.SvgFooterHeadphones>svgFooterHeadphones</Styles.SvgFooterHeadphones>
+						<Styles.FooterHeadphones>Footer Headphones</Styles.FooterHeadphones>
+
 					</div>
-					<div>Don't Forget To Vote!</div>
-				</div>
+
+					<Styles.FooterBlurd>Don't Forget To Vote!</Styles.FooterBlurd>
+
+				</Styles.FooterContainer>
+
 			</div>
-		</FooterStyled>
+		</Styles.FooterStyled>
 	);
-};
+}
