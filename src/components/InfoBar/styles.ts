@@ -7,4 +7,11 @@ export const SubContainer = styled.div`
 
 export const InfoBarContainer = styled.div`
 	padding: 16px;
+  text-align: center;
+  font-family: 'PhilosopherBold';
+`;
+
+export const DataMessage = styled.span`
+  color: ${Colors.firebrick};
+  font-family: 'RobotoMonoV4LatinRegular';
 `;

@@ -33,6 +33,7 @@ export const Colors = {
 	cadetblue: '#8ee5ee',
   orangered: '#ff4500',
   crimson: '#dc143c',
+  firebrick: '#ee2c2c',
 	syracuseOrange: '#f37321',
 	rutgersScarlet: '#ee363d',
 	dodgerblue: '#104e8b',

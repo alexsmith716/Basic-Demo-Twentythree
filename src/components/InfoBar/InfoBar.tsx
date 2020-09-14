@@ -55,7 +55,7 @@ export const InfoBar = () => {
 					{/* (>>>>>>>>>>>>>>>>>>>>>>>> LOADED >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{!loading && (
 						<>
-							<div>InfoBar message: '<span className="color-firebrick-2">{data ? data.message : 'no message!'}</span>'</div>
+							<div>InfoBar message: '<Styles.DataMessage>{data ? data.message : 'no message!'}</Styles.DataMessage>'</div>
 							<div>{data && new Date(data.time).toString()}</div>
 							<div>{data && data.timeElapsed}</div>
 
