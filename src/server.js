@@ -11,14 +11,13 @@ import serialize from 'serialize-javascript';
 import fetch from 'node-fetch';
 import { ServerStyleSheet } from 'styled-components';
 
-import { ThemeProvider } from 'styled-components';
-import theme from './styled/Theme';
-
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
 import { resolvers } from './graphql/resolvers/resolvers.js';
 
 import asyncGetPromises from './utils/asyncGetPromises';
+
+import theme from './styled/Theme';
 
 import routes from './routes';
 import configureStore from './redux/configureStore';
@@ -107,9 +106,13 @@ export default ({ clientStats }) => async (req, res) => {
 		client: apiClient(req),
 	};
 
+	const d = {data: { ...preloadedState, ...theme }};
+
+	console.log('BHBHHBHBHBHssssssssssSSSsssSSsssSSsssSS???????: ', d)
+
 	const store = configureStore({
 		history,
-		data: { ...preloadedState },
+		data: { ...preloadedState, ...theme },
 		helpers: providers,
 	});
 
@@ -191,7 +194,7 @@ export default ({ clientStats }) => async (req, res) => {
 		ReactDOM.renderToNodeStream(<Html assets={a} store={store} />).pipe(res);
 	}
 
-  await asyncGetPromises(routes, req.path, store);
+	await asyncGetPromises(routes, req.path, store);
 
 	try {
 
@@ -317,9 +320,7 @@ export default ({ clientStats }) => async (req, res) => {
 					<Provider store={store}>
 						<Router history={history}>
 							<StaticRouter location={req.originalUrl} context={context}>
-                <ThemeProvider theme={theme}>
-								  {renderRoutes(routes)}
-                </ThemeProvider>
+								{renderRoutes(routes)}
 							</StaticRouter>
 						</Router>
 					</Provider>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-// import { Colors } from '../../styled/Colors';
+import { Colors } from '../../styled/Colors';
 import { Link } from 'react-router-dom';
 
 export const NavBar = styled.div`
@@ -8,7 +8,7 @@ export const NavBar = styled.div`
 	right: 0;
 	left: 0;
 	z-index: 1030;
-	background-color: #343a40;
+	background-color: ${Colors.grayEight};
 	height: 56px;
 	display: flex;
 	align-items: center;
@@ -53,7 +53,7 @@ export const Collapse = styled.div`
 
 export const NavBarNav = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(3, auto);
+	grid-template-columns: repeat(4, auto);
 	grid-gap: 15px;
 	list-style: none;
 	text-align: center;
@@ -73,6 +73,27 @@ export const NavBarNav = styled.ul`
 			z-index: 1;
 		`}
 	}
+`;
+
+export const NavBarNavA = styled.a`
+  color: #adb5bd;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #e9ecef;
+  }
+
+  @media screen and (max-width: 992px) {
+    text-align: center;
+    padding: .5rem;
+    width: 100%;
+    display: table;
+
+    &:hover {
+      background-color: #3D3D3D;
+    }
+  }
 `;
 
 export const NavBarNavLink = styled(Link)`

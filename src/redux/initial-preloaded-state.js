@@ -8,5 +8,4 @@ export default req => ({
 	counterPreloaded: {
 		counterPreloadedState: req.counterPreloadedState,
 	},
-
 });
