@@ -76,24 +76,24 @@ export const NavBarNav = styled.ul`
 `;
 
 export const NavBarNavA = styled.a`
-  color: #adb5bd;
-  text-decoration: none;
-  cursor: pointer;
+	color: #adb5bd;
+	text-decoration: none;
+	cursor: pointer;
 
-  &:hover {
-    color: #e9ecef;
-  }
+	&:hover {
+		color: #e9ecef;
+	}
 
-  @media screen and (max-width: 992px) {
-    text-align: center;
-    padding: .5rem;
-    width: 100%;
-    display: table;
+	@media screen and (max-width: 992px) {
+		text-align: center;
+		padding: .5rem;
+		width: 100%;
+		display: table;
 
-    &:hover {
-      background-color: #3D3D3D;
-    }
-  }
+		&:hover {
+			background-color: #3D3D3D;
+		}
+	}
 `;
 
 export const NavBarNavLink = styled(Link)`
