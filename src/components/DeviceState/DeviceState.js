@@ -2,9 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import * as Styles from './styles';
 
+//  interface StateInfo {
+//    info: any
+//  }
 
 export const DeviceState = () => {
 
+  //  const online = useSelector((state: StateInfo) => state.online);
 	const online = useSelector(state => state.online);
 	const userAgent = useSelector(state => state.device.userAgent);
 	const isBot = useSelector(state => state.device.isBot);

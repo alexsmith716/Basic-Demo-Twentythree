@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
 import { Loading } from '../Loading';

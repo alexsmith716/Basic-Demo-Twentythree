@@ -11,8 +11,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import localForage from 'localforage';
 import { getStoredState } from 'redux-persist';
 
-import { ThemeProvider } from 'styled-components';
-
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
@@ -21,8 +19,6 @@ import defineHeaders from './utils/defineHeaders';
 
 import { Provider } from 'react-redux';
 import asyncGetPromises from './utils/asyncGetPromises';
-
-import theme from './styled/Theme';
 
 import RouterTrigger from './components/RouterTrigger/RouterTrigger';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -44,7 +40,7 @@ const persistConfig = {
 		return originalState;
 	},
 	// redux-persist:
-	whitelist: ['device', 'info', 'infoTEST', 'infoAlert', 'infoAlertThree', 'infoAlertFour'],
+	// whitelist: ['device', 'info', 'infoTEST', 'infoAlert', 'infoAlertThree', 'infoAlertFour'],
 };
 
 //  const spinnerContainer = document.createElement('div');
@@ -138,12 +134,10 @@ const providers = {
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
-            <ThemeProvider theme={theme}>
-              <ScrollToTop />
-              <RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-              	{renderRoutes(_routes)}
-              </RouterTrigger>
-            </ThemeProvider>
+						<ScrollToTop />
+						<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
+							{renderRoutes(_routes)}
+						</RouterTrigger>
 					</Router>
 				</Provider>
 			</HelmetProvider>

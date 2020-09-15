@@ -14,6 +14,12 @@ import { createGlobalStyle } from 'styled-components';
 //		}
 //	`
 
+// color: ${Colors.grayNine};
+// background-color: ${Colors.ivory};
+
+// color: ${props => props.theme.colors.grayNine};
+// background-color: ${props => props.theme.colors.plum};
+
 import { Colors } from './Colors';
 
 export const GlobalStyle = createGlobalStyle`
@@ -31,7 +37,8 @@ export const GlobalStyle = createGlobalStyle`
 		font-weight: 400;
 		font-display: fallback;
 		line-height: 1.5;
-		color: ${Colors.grayNine};
+		color: ${props => props.theme.textColor};
+    background-color: ${props => props.theme.backgroundColor};
 		text-align: left;
 	}
 	

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { isNormalTheme, toggleTheme } from '../../redux/modules/toggleTheme';
 import { navLinks } from './navLinks';
 import * as Styles from './styles';
 
 
 export const NavBar = () => {
+
+	const themeType = useSelector(state => state.toggleTheme.theme.themeType);
+	const dispatch = useDispatch();
 
 	const [clicked, setClicked] = useState(false);
 
@@ -24,6 +29,11 @@ export const NavBar = () => {
 		},
 		[clicked]
 	);
+
+	const doThemeToggle = () => {
+		console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > onClick > doThemeToggle');
+		dispatch(toggleTheme(themeType));
+	}
 
 	return (
 
@@ -48,6 +58,12 @@ export const NavBar = () => {
 					<Styles.Collapse>
 
 						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'clicked' : '' }>
+
+							<li>
+								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
+									toggleTheme
+								</Styles.NavBarNavA>
+							</li>
 
 							{ navLinks.map((item, index) => {
 								return (

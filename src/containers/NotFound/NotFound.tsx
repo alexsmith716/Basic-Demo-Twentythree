@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
 const NotFoundStyled = styled.div`
-  // background-color: ${p => p.theme.rutgersScarlet};
+  // background-color: '#990099';
 `;
 
 const StyledHeadingOne = styled.h1`
