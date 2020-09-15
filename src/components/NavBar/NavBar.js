@@ -33,6 +33,7 @@ export const NavBar = () => {
 	const doThemeToggle = () => {
 		console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > onClick > doThemeToggle');
 		dispatch(toggleTheme(themeType));
+		setClicked(false);
 	}
 
 	return (

@@ -2,20 +2,22 @@
 const TOGGLE_THEME_NORMAL = 'redux-example/toggleTheme/TOGGLE_THEME_NORMAL';
 const TOGGLE_THEME_WEIRD = 'redux-example/toggleTheme/TOGGLE_THEME_WEIRD';
 
-const normalTheme = {
-	textColor: '#212529',
-	backgroundColor: '#f8f9fa',
-	themeType: 'normal',
-}
+//	const normalTheme = {
+//		textColor: '#212529',
+//		backgroundColor: '#f8f9fa',
+//		themeType: 'normal',
+//	}
+//	
+//	const weirdTheme = {
+//		textColor: '#e3cf57',
+//		backgroundColor: '#dda0dd',
+//		themeType: 'weird',
+//	}
 
-const weirdTheme = {
-	textColor: '#e3cf57',
-	backgroundColor: '#dda0dd',
-	themeType: 'weird',
-}
+import theme from '../../styled/Theme';
 
 const initialState = {
-	theme: normalTheme
+	theme: theme.normalTheme
 };
 
 // Reducer
@@ -25,14 +27,12 @@ export default function reducer(state = initialState, action = {}) {
 
 		case TOGGLE_THEME_NORMAL:
 			return {
-				...state,
-				theme: normalTheme
+				theme: theme.normalTheme
 			};
 
 		case TOGGLE_THEME_WEIRD:
 			return {
-				...state,
-				theme: weirdTheme
+				theme: theme.weirdTheme
 			};
 
 		default:

@@ -9,9 +9,7 @@ import config from '../../../config/config';
 
 export const Root = ({ route }) => {
 
-  const toggledTheme = useSelector(state => state.toggleTheme.theme);
-
-  // { textColor: '#e3cf57', backgroundColor: '#dda0dd' }
+	const toggledTheme = useSelector(state => state.toggleTheme.theme);
 
 	return (
 		<Styles.RootComponent>
