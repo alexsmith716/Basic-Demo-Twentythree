@@ -2,18 +2,6 @@
 const TOGGLE_THEME_NORMAL = 'redux-example/toggleTheme/TOGGLE_THEME_NORMAL';
 const TOGGLE_THEME_WEIRD = 'redux-example/toggleTheme/TOGGLE_THEME_WEIRD';
 
-//	const normalTheme = {
-//		textColor: '#212529',
-//		backgroundColor: '#f8f9fa',
-//		themeType: 'normal',
-//	}
-//	
-//	const weirdTheme = {
-//		textColor: '#e3cf57',
-//		backgroundColor: '#dda0dd',
-//		themeType: 'weird',
-//	}
-
 import theme from '../../styled/Theme';
 
 const initialState = {
