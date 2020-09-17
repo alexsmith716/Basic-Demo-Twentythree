@@ -1,6 +1,6 @@
 // Actions
 const TOGGLE_THEME_NORMAL = 'redux-example/toggleTheme/TOGGLE_THEME_NORMAL';
-const TOGGLE_THEME_WEIRD = 'redux-example/toggleTheme/TOGGLE_THEME_WEIRD';
+const TOGGLE_THEME_DARK = 'redux-example/toggleTheme/TOGGLE_THEME_DARK';
 
 import theme from '../../styled/Theme';
 
@@ -18,9 +18,9 @@ export default function reducer(state = initialState, action = {}) {
 				theme: theme.normalTheme
 			};
 
-		case TOGGLE_THEME_WEIRD:
+		case TOGGLE_THEME_DARK:
 			return {
-				theme: theme.weirdTheme
+				theme: theme.darkTheme
 			};
 
 		default:
@@ -35,7 +35,7 @@ export function isNormalTheme(globalState) {
 }
 
 export function toggleTheme(themeType) {
-	const t = themeType === 'normal' ? TOGGLE_THEME_WEIRD : TOGGLE_THEME_NORMAL;
+	const t = themeType === 'normal' ? TOGGLE_THEME_DARK : TOGGLE_THEME_NORMAL;
 	return {
 		type: t
 	};

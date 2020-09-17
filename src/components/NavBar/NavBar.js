@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { isNormalTheme, toggleTheme } from '../../redux/modules/toggleTheme';
+import { toggleTheme } from '../../redux/modules/toggleTheme';
 import { navLinks } from './navLinks';
 import * as Styles from './styles';
 
+import { ThemeContext } from '../../containers/App';
 
 export const NavBar = () => {
 
-	const themeType = useSelector(state => state.toggleTheme.theme.themeType);
+	const toggledTheme = useSelector(state => state.toggleTheme.theme);
 	const dispatch = useDispatch();
+  const theme = useContext(ThemeContext);
+
+  // console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > toggledTheme: ', toggledTheme;
+  // console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > theme: ', theme);
 
 	const [clicked, setClicked] = useState(false);
 
@@ -31,8 +36,7 @@ export const NavBar = () => {
 	);
 
 	const doThemeToggle = () => {
-		console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > onClick > doThemeToggle');
-		dispatch(toggleTheme(themeType));
+		dispatch(toggleTheme(toggledTheme.themeType));
 		setClicked(false);
 	}
 

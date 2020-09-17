@@ -14,12 +14,6 @@ import { createGlobalStyle } from 'styled-components';
 //		}
 //	`
 
-// color: ${Colors.grayNine};
-// background-color: ${Colors.ivory};
-
-// color: ${props => props.theme.colors.grayNine};
-// background-color: ${props => props.theme.colors.plum};
-
 import { Colors } from './Colors';
 
 export const GlobalStyle = createGlobalStyle`
@@ -33,12 +27,12 @@ export const GlobalStyle = createGlobalStyle`
 		padding-top: 56px;
 		margin: 0;
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-		font-size: 1;
+		font-size: 16px;
 		font-weight: 400;
 		font-display: fallback;
 		line-height: 1.5;
 		color: ${props => props.theme.textColor};
-    background-color: ${props => props.theme.backgroundColor};
+		background-color: ${props => props.theme.backgroundColor};
 		text-align: left;
 	}
 	
@@ -489,5 +483,7 @@ export const GlobalStyle = createGlobalStyle`
 		border: 2px solid #b0c4de;
 		border-radius: 3px;
 	}
+
+	// ========================================
 
 `;

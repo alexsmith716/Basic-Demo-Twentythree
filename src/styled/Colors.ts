@@ -38,4 +38,5 @@ export const Colors = {
 	rutgersScarlet: '#ee363d',
 	dodgerblue: '#104e8b',
 	darkorange: '#cd6600',
+  mediumblue: '#0000cd',
 };
