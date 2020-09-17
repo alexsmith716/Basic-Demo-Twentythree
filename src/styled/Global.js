@@ -486,4 +486,32 @@ export const GlobalStyle = createGlobalStyle`
 
 	// ========================================
 
+	.spinner-progress {
+		pointer-events: none;
+		position: absolute;
+		z-index: 9999;
+		top: 11px;
+		right: 6px;
+	}
+
+	@keyframes spinner {
+		to { transform: rotate(360deg); }
+	}
+	
+	.spinner {
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
+		vertical-align: text-bottom;
+		border: .25em solid ${props => props.theme.spinnerColor};
+		border-right-color: transparent;
+		border-radius: 50%;
+		animation: spinner .75s linear infinite;
+	}
+	
+	.spinner-sm {
+		width: 1rem;
+		height: 1rem;
+		border-width: .2em;
+	}
 `;
