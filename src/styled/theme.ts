@@ -4,12 +4,16 @@ export const Theme = {
 	normalTheme: {
 		textColor: '#212529',
 		backgroundColor: '#f8f9fa',
+		navBarColor: `${Colors.grayEight}`,
+		spinnerColor: '#fff',
 		themeType: 'normal',
 	},
-	weirdTheme: {
-		textColor: '#e3cf57',
-		backgroundColor: '#dda0dd',
-		themeType: 'weird',
+	darkTheme: {
+		textColor: `${Colors.mediumblue}`,
+		backgroundColor: `${Colors.black}`,
+		navBarColor: `${Colors.black}`,
+		spinnerColor: `${Colors.dodgerblue}`,
+		themeType: 'dark',
 	},
 };
 

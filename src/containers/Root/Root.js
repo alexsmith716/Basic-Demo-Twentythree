@@ -15,9 +15,9 @@ export const Root = ({ route }) => {
 		<>
 			<HelmetProvider>
 				<Helmet {...config.app.head} />
-				<Global.GlobalStyle theme={toggledTheme}/>
-				{/* ------------- App ------------- */}
-				{renderRoutes(route.routes)}
+					<Global.GlobalStyle theme={toggledTheme}/>
+					{/* ------------- App ------------- */}
+					{renderRoutes(route.routes)}
 			</HelmetProvider>
 		</>
 	);

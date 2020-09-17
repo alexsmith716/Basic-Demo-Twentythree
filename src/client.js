@@ -43,11 +43,11 @@ const persistConfig = {
 	// whitelist: ['device', 'info', 'infoTEST', 'infoAlert', 'infoAlertThree', 'infoAlertFour'],
 };
 
-//  const spinnerContainer = document.createElement('div');
-//  spinnerContainer.classList.add('d-inline-flex', 'spinner-layered', 'text-light');
-//  // spinnerContainer.className = 'd-inline-flex spinner-layered text-light';
+//	const spinnerContainer = document.createElement('div');
+//	spinnerContainer.classList.add('spinner-progress');
+//  // spinnerContainer.className = 'spinner-progress';
 const dest = document.getElementById('react-root');
-// document.body.insertBefore(spinnerContainer, dest);
+//	document.body.insertBefore(spinnerContainer, dest);
 
 const client = apiClient();
 
@@ -112,7 +112,7 @@ const providers = {
 
 	const triggerHooks = async (_routes, pathname) => {
 		// console.log('>>>> CLIENT > triggerHooks > store.getState() 1111 ######: ', store.getState());
-		//  spinnerContainer.classList.add('spinner-border');
+		// spinnerContainer.classList.add('spinner');
 
 		// Don't fetch data for initial route, server has already done the work:
 		if (window.__PRELOADED__) {
@@ -125,7 +125,7 @@ const providers = {
 			await asyncGetPromises(_routes, pathname, store);
 		}
 
-		//  spinnerContainer.classList.remove('spinner-border');
+		// spinnerContainer.classList.remove('spinner');
 		// console.log('>>>> CLIENT > triggerHooks > store.getState() 2222 ######: ', store.getState());
 	};
 

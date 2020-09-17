@@ -8,6 +8,7 @@ import About from './containers/About/Loadable';
 // import GridLayout from './containers/GridLayout/Loadable';
 
 import { preloadData as preloadDataApp } from './containers/App/preloadData';
+import { preloadData as preloadDataAboutThree } from './containers/About/preloadData';
 
 //  `createGlobalStyle`
 import './styled/fonts.css';
@@ -37,6 +38,7 @@ const routes = [{
 				path: '/about',
 				exact: true,
 				component: About,
+				loadData: preloadDataAboutThree,
 				meta: {
 					title: 'Basic Demo Twentythree',
 					description: 'Component About'
