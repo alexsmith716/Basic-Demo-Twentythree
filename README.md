@@ -18,6 +18,13 @@ but boost the specificity of "styled-components" style rules with "babel-plugin-
 
 ### TO-DO:
 
+NOT WORKING `Uncaught SyntaxError`:
+`
+    if (__DISABLE_SSR__) {
+      return hydrate(assets);
+    }
+`
+
 "Book Card" > "Bookshelf"
 
 API > GET /books:

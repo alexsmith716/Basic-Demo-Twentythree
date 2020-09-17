@@ -1,11 +1,11 @@
 // Actions
-const TOGGLE_THEME_NORMAL = 'redux-example/toggleTheme/TOGGLE_THEME_NORMAL';
+const TOGGLE_THEME_DEFAULT = 'redux-example/toggleTheme/TOGGLE_THEME_DEFAULT';
 const TOGGLE_THEME_DARK = 'redux-example/toggleTheme/TOGGLE_THEME_DARK';
 
 import theme from '../../styled/Theme';
 
 const initialState = {
-	theme: theme.normalTheme
+	theme: theme.defaultTheme
 };
 
 // Reducer
@@ -13,9 +13,9 @@ export default function reducer(state = initialState, action = {}) {
 
 	switch (action.type) {
 
-		case TOGGLE_THEME_NORMAL:
+		case TOGGLE_THEME_DEFAULT:
 			return {
-				theme: theme.normalTheme
+				theme: theme.defaultTheme
 			};
 
 		case TOGGLE_THEME_DARK:
@@ -30,12 +30,12 @@ export default function reducer(state = initialState, action = {}) {
 
 // Actions
 
-export function isNormalTheme(globalState) {
-	return globalState.theme && globalState.theme.themeType === 'normal';
+export function isDefaultTheme(globalState) {
+	return globalState.theme && globalState.theme.themeType === 'default';
 }
 
 export function toggleTheme(themeType) {
-	const t = themeType === 'normal' ? TOGGLE_THEME_DARK : TOGGLE_THEME_NORMAL;
+	const t = themeType === 'default' ? TOGGLE_THEME_DARK : TOGGLE_THEME_DEFAULT;
 	return {
 		type: t
 	};

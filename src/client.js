@@ -15,6 +15,9 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink
 
 import { onError } from '@apollo/client/link/error';
 
+import { ThemeProvider } from 'styled-components';
+import theme from './styled/Theme';
+
 import defineHeaders from './utils/defineHeaders';
 
 import { Provider } from 'react-redux';
@@ -134,10 +137,12 @@ const providers = {
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
-						<ScrollToTop />
-						<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-							{renderRoutes(_routes)}
-						</RouterTrigger>
+						<ThemeProvider theme={theme.defaultTheme}>
+							<ScrollToTop />
+							<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
+								{renderRoutes(_routes)}
+							</RouterTrigger>
+						</ThemeProvider>
 					</Router>
 				</Provider>
 			</HelmetProvider>

@@ -1,12 +1,13 @@
 import { Colors } from './Colors';
 
 export const Theme = {
-	normalTheme: {
+	defaultTheme: {
 		textColor: '#212529',
-		backgroundColor: '#f8f9fa',
+		backgroundColor: `${Colors.grayOne}`,
 		navBarColor: `${Colors.grayEight}`,
 		spinnerColor: '#fff',
-		themeType: 'normal',
+		themeType: 'default',
+		rutgersScarlet: Colors.rutgersScarlet,
 	},
 	darkTheme: {
 		textColor: `${Colors.mediumblue}`,
@@ -14,6 +15,7 @@ export const Theme = {
 		navBarColor: `${Colors.black}`,
 		spinnerColor: `${Colors.dodgerblue}`,
 		themeType: 'dark',
+		rutgersScarlet: Colors.rutgersScarlet,
 	},
 };
 
