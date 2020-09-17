@@ -9,7 +9,7 @@ import flushChunks from 'webpack-flush-chunks';
 import { HelmetProvider } from 'react-helmet-async';
 import serialize from 'serialize-javascript';
 import fetch from 'node-fetch';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, ThemeProvider } from 'styled-components';
 
 import { GetReviews, GetADroid, GetCharacter } from './graphql/queries/queries.graphql';
 import * as graphqlQueries from './graphql/queries/queries.js';
@@ -320,7 +320,9 @@ export default ({ clientStats }) => async (req, res) => {
 					<Provider store={store}>
 						<Router history={history}>
 							<StaticRouter location={req.originalUrl} context={context}>
-								{renderRoutes(routes)}
+								<ThemeProvider theme={theme.defaultTheme}>
+									{renderRoutes(routes)}
+								</ThemeProvider>
 							</StaticRouter>
 						</Router>
 					</Provider>
