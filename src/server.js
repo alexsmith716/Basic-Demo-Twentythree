@@ -106,15 +106,15 @@ export default ({ clientStats }) => async (req, res) => {
 		client: apiClient(req),
 	};
 
-	const d = {data: { ...preloadedState, ...theme }};
-
-	console.log('BHBHHBHBHBHssssssssssSSSsssSSsssSSsssSS???????: ', d)
-
 	const store = configureStore({
 		history,
-		data: { ...preloadedState, ...theme },
+		data: { ...preloadedState, ...theme.defaultTheme },
 		helpers: providers,
 	});
+
+	store.subscribe(() =>
+		console.log('>>>> SERVER > configureStore > store.getState(): ', store.getState())
+	);
 
 	// =====================================================
 

@@ -4,16 +4,19 @@ import { Link } from 'react-router-dom';
 
 // background-color: ${props => props.theme.navBarColor};
 
+const NavBarBGTheme = css`
+  background-color: ${props => props.theme.navBarColor};
+`
 export const NavBar = styled.div`
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1030;
-	background-color: ${props => props.theme.navBarColor};
-	height: 56px;
-	display: flex;
-	align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  ${NavBarBGTheme}
+  height: 56px;
+  display: flex;
+  align-items: center;
 `;
 
 export const Expand = styled.div`

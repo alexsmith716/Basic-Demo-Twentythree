@@ -6,16 +6,16 @@ export const Theme = {
 		backgroundColor: `${Colors.grayOne}`,
 		navBarColor: `${Colors.grayEight}`,
 		spinnerColor: '#fff',
-		themeType: 'default',
 		rutgersScarlet: Colors.rutgersScarlet,
+		themeType: 'default',
 	},
 	darkTheme: {
 		textColor: `${Colors.mediumblue}`,
 		backgroundColor: `${Colors.black}`,
 		navBarColor: `${Colors.black}`,
 		spinnerColor: `${Colors.dodgerblue}`,
-		themeType: 'dark',
 		rutgersScarlet: Colors.rutgersScarlet,
+		themeType: 'dark',
 	},
 };
 
