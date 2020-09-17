@@ -11,6 +11,8 @@ const initialState = {
 // Reducer
 export default function reducer(state = initialState, action = {}) {
 
+	// console.log('>>>> toggleTheme > reducer > state.theme: ', state.theme);
+
 	switch (action.type) {
 
 		case TOGGLE_THEME_DEFAULT:
@@ -29,7 +31,6 @@ export default function reducer(state = initialState, action = {}) {
 }
 
 // Actions
-
 export function isDefaultTheme(globalState) {
 	return globalState.theme && globalState.theme.themeType === 'default';
 }
