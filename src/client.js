@@ -16,7 +16,7 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink
 import { onError } from '@apollo/client/link/error';
 
 import { ThemeProvider } from 'styled-components';
-import theme from './styled/Theme';
+import { AppTheme } from './styled';
 
 import defineHeaders from './utils/defineHeaders';
 
@@ -137,7 +137,7 @@ const providers = {
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
-						<ThemeProvider theme={theme.defaultTheme}>
+						<ThemeProvider theme={AppTheme.theme.defaultTheme}>
 							<ScrollToTop />
 							<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
 								{renderRoutes(_routes)}

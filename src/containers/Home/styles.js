@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Colors } from '../../styled/Colors';
 import { Button } from '../../components/Button';
 
 import splashImage from './img/splashImage-2048x719.jpg';

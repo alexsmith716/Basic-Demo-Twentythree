@@ -17,7 +17,7 @@ import { resolvers } from './graphql/resolvers/resolvers.js';
 
 import asyncGetPromises from './utils/asyncGetPromises';
 
-import theme from './styled/Theme';
+import { AppTheme } from './styled';
 
 import routes from './routes';
 import configureStore from './redux/configureStore';
@@ -108,7 +108,7 @@ export default ({ clientStats }) => async (req, res) => {
 
 	const store = configureStore({
 		history,
-		data: { ...preloadedState, ...theme.defaultTheme },
+		data: { ...preloadedState, ...AppTheme.theme.defaultTheme },
 		helpers: providers,
 	});
 
@@ -320,7 +320,7 @@ export default ({ clientStats }) => async (req, res) => {
 					<Provider store={store}>
 						<Router history={history}>
 							<StaticRouter location={req.originalUrl} context={context}>
-								<ThemeProvider theme={theme.defaultTheme}>
+								<ThemeProvider theme={AppTheme.theme.defaultTheme}>
 									{renderRoutes(routes)}
 								</ThemeProvider>
 							</StaticRouter>
