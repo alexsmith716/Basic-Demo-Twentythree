@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-import { Colors } from '../../styled/Colors';
+import { AppColors } from '../../styled';
 
 export const FooterStyled = styled.div`
-	background-color: ${Colors.syracuseOrange};
+	background-color: ${AppColors.colors.syracuseOrange};
 `;
 
 export const FooterContainer = styled.div`
-	color: ${Colors.white};
+	color: ${AppColors.colors.white};
   font-family: 'LobsterV20LatinRegular'
 `;
 
 export const SvgFooterHeadphones = styled.span`
-	color: ${Colors.gold};
+	color: ${AppColors.colors.gold};
 `;
 
 export const FooterHeadphones = styled.span`
-	color: ${Colors.gold};
+	color: ${AppColors.colors.gold};
 	font-family: 'Norwester'
 `;
 

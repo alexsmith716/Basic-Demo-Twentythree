@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../../styled/Colors';
+import { AppColors } from '../../styled';
 
 export const DeviceStateStyled = styled.div`
 	background-color: #fffff0;
@@ -8,21 +8,21 @@ export const DeviceStateStyled = styled.div`
 `;
 
 export const StoreStateOnline = styled.div`
-	color: ${Colors.olive};
+	color: ${AppColors.colors.olive};
 	font-family: 'OpenSansBold';
 `;
 
 export const StoreStateUserAgent = styled.div`
-	color: ${Colors.crimson};
+	color: ${AppColors.colors.crimson};
 	font-family: 'PhilosopherBold';
 `;
 
 export const StoreStateIsBot = styled.div`
-	color: ${Colors.orangered};
+	color: ${AppColors.colors.orangered};
 	font-family: 'Norwester';
 `;
 
 export const StoreStateBlurb = styled.div`
-	color: ${Colors.mediumspringgreen};
+	color: ${AppColors.colors.mediumspringgreen};
 	font-family: 'OldEnglish';
 `;
