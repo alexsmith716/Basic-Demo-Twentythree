@@ -13,25 +13,25 @@ export const ThemeContext = React.createContext();
 
 export const App = ({ route }) => {
 
-  const toggledTheme = useSelector(state => state.toggleTheme.theme);
+	const toggledTheme = useSelector(state => state.toggleTheme.theme);
 
 	return (
-    <ThemeContext.Provider value={toggledTheme}>
-      <ThemeProvider theme={toggledTheme}>
-      	{/* ------------- Navbar ------------- */}
-      	<NavBar />
-      	{/* ------------- Main Content ------------- */}
-      	{renderRoutes(route.routes)}
-      	{/* --------------- Svg Examples ----------------- */}
-      	{/* <SvgExample /> */}
-      	{/* --------------- InfoBar ---------------- */}
-      	<InfoBar />
-      	{/* ------------- Device State ----------- */}
-      	<DeviceState />
-      	{/* --------------- Footer ----------------- */}
-      	<Footer />
-      	{/* --------------- Modals ----------------- */}
-      </ThemeProvider>
-    </ThemeContext.Provider>
+		<ThemeContext.Provider value={toggledTheme}>
+			<ThemeProvider theme={toggledTheme}>
+				{/* ------------- Navbar ------------- */}
+				<NavBar />
+				{/* ------------- Main Content ------------- */}
+				{renderRoutes(route.routes)}
+				{/* --------------- Svg Examples ----------------- */}
+				{/* <SvgExample /> */}
+				{/* --------------- InfoBar ---------------- */}
+				<InfoBar />
+				{/* ------------- Device State ----------- */}
+				<DeviceState />
+				{/* --------------- Footer ----------------- */}
+				<Footer />
+				{/* --------------- Modals ----------------- */}
+			</ThemeProvider>
+		</ThemeContext.Provider>
 	);
 }

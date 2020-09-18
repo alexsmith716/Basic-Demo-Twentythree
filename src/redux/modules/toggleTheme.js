@@ -31,10 +31,6 @@ export default function reducer(state = initialState, action = {}) {
 }
 
 // Actions
-export function isDefaultTheme(globalState) {
-	return globalState.theme && globalState.theme.themeType === 'default';
-}
-
 export function toggleTheme(themeType) {
 	const t = themeType === 'default' ? TOGGLE_THEME_DARK : TOGGLE_THEME_DEFAULT;
 	return {
