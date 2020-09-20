@@ -9,11 +9,21 @@ import { DeviceState } from '../../components/DeviceState';
 import { InfoBar } from '../../components/InfoBar';
 import { Footer } from '../../components/Footer';
 
-export const ThemeContext = React.createContext();
+// import { getTheme } from '../../redux/selectors';
 
-export const App = ({ route }) => {
+interface AppProps {
+	route: any;
+};
 
-	const toggledTheme = useSelector(state => state.toggleTheme.theme);
+interface AppState {
+	toggleTheme: any;
+};
+
+export const ThemeContext = React.createContext(null);
+
+export const App = ({route}: AppProps)  => {
+
+	const toggledTheme = useSelector((state: AppState) => state.toggleTheme.theme);
 
 	return (
 		<ThemeContext.Provider value={toggledTheme}>

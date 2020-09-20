@@ -12,8 +12,8 @@ export const NavBar = () => {
 	const dispatch = useDispatch();
   const theme = useContext(ThemeContext);
 
-  // console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > toggledTheme: ', toggledTheme;
-  // console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > theme: ', theme);
+  //  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > toggledTheme: ', toggledTheme);
+  //  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useContext(ThemeContext): ', theme);
 
 	const [clicked, setClicked] = useState(false);
 
