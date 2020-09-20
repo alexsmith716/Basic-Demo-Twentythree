@@ -7,9 +7,20 @@ import { useSelector } from 'react-redux';
 import { Global } from '../../styled';
 import config from '../../../config/config';
 
-export const Root = ({ route }) => {
+interface RootProps {
+	route: any
+};
 
-	const toggledTheme = useSelector(state => state.toggleTheme.theme);
+interface RootState {
+	toggleTheme: any;
+};
+
+export const Root = ({route}: RootProps) => {
+
+	const toggledTheme = useSelector((state: RootState) => state.toggleTheme.theme);
+
+  console.log('>>>> Root > interface > route: ', route);
+  console.log('>>>> Root > interface > route222: ', typeof route);
 
 	return (
 		<>
