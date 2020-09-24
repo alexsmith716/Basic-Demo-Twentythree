@@ -9,8 +9,6 @@ import { DeviceState } from '../../components/DeviceState';
 import { InfoBar } from '../../components/InfoBar';
 import { Footer } from '../../components/Footer';
 
-// import { getTheme } from '../../redux/selectors';
-
 interface AppProps {
 	route: any;
 };

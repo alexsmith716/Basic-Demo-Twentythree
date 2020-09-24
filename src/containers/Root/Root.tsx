@@ -19,9 +19,6 @@ export const Root = ({route}: RootProps) => {
 
 	const toggledTheme = useSelector((state: RootState) => state.toggleTheme.theme);
 
-  console.log('>>>> Root > interface > route: ', route);
-  console.log('>>>> Root > interface > route222: ', typeof route);
-
 	return (
 		<>
 			<HelmetProvider>

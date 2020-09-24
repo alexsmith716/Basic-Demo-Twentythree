@@ -8,83 +8,83 @@ import { ThemeContext } from '../../containers/App';
 
 export const NavBar = () => {
 
-	const toggledTheme = useSelector(state => state.toggleTheme.theme);
-	const dispatch = useDispatch();
+  const toggledTheme = useSelector(state => state.toggleTheme.theme);
+  const dispatch = useDispatch();
   const theme = useContext(ThemeContext);
 
   //  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > toggledTheme: ', toggledTheme);
   //  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useContext(ThemeContext): ', theme);
 
-	const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
-	useEffect(() => {
-			//  componentDidMount
-			console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidMount');
+  useEffect(() => {
+      //  componentDidMount
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidMount');
 
-			//  componentDidUpdate
-			if (clicked) {
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidUpdate > clicked: ', clicked);
-			}
+      //  componentDidUpdate
+      if (clicked) {
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidUpdate > clicked: ', clicked);
+      }
 
-			//  componentWillUnmount
-			return () => {
-				//  some effects might require cleanup
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase');
-			};
-		},
-		[clicked]
-	);
+      //  componentWillUnmount
+      return () => {
+        //  some effects might require cleanup
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase');
+      };
+    },
+    [clicked]
+  );
 
-	const doThemeToggle = () => {
-		dispatch(toggleTheme(toggledTheme.themeType));
-		setClicked(false);
-	}
+  const doThemeToggle = () => {
+    dispatch(toggleTheme(toggledTheme.themeType));
+    setClicked(false);
+  }
 
-	return (
+  return (
 
-		<Styles.NavBar className="navbar">
+    <Styles.NavBar className="navbar">
 
-			<div className="container">
+      <div className="container">
 
-				<Styles.Expand>
+        <Styles.Expand>
 
-					<Styles.NavBarBrandLink to='/' className="js-scroll-trigger" onClick={() => setClicked(false)}>Election App</Styles.NavBarBrandLink>
+          <Styles.NavBarBrandLink to='/' className="js-scroll-trigger" onClick={() => setClicked(false)}>Election App</Styles.NavBarBrandLink>
 
-					<Styles.Toggler onClick={() => setClicked(!clicked)}>
-						{clicked && (
-							<div className="navbar-close"></div>
-						)}
+          <Styles.Toggler onClick={() => setClicked(!clicked)}>
+            {clicked && (
+              <div className="navbar-close"></div>
+            )}
 
-						{!clicked && (
-							<div className="navbar-open"></div>
-						)}
-					</Styles.Toggler>
+            {!clicked && (
+              <div className="navbar-open"></div>
+            )}
+          </Styles.Toggler>
 
-					<Styles.Collapse>
+          <Styles.Collapse>
 
-						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'clicked' : '' }>
+            <Styles.NavBarNav clicked={clicked} className={ clicked ? 'clicked' : '' }>
 
-							<li>
-								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
-									toggleTheme
-								</Styles.NavBarNavA>
-							</li>
+              <li>
+                <Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
+                  toggleTheme
+                </Styles.NavBarNavA>
+              </li>
 
-							{ navLinks.map((item, index) => {
-								return (
-									<li key={index}>
-										<Styles.NavBarNavLink to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
-											{item.title}
-										</Styles.NavBarNavLink>
-									</li>
-								)
-							}) }
+              { navLinks.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <Styles.NavBarNavLink to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
+                      {item.title}
+                    </Styles.NavBarNavLink>
+                  </li>
+                )
+              }) }
 
-						</Styles.NavBarNav>
+            </Styles.NavBarNav>
 
-					</Styles.Collapse>
-				</Styles.Expand>
-			</div>
-		</Styles.NavBar>
-	);
+          </Styles.Collapse>
+        </Styles.Expand>
+      </div>
+    </Styles.NavBar>
+  );
 }
