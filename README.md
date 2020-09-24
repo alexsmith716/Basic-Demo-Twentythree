@@ -2,19 +2,9 @@
 
 ### UPDATE:
 
-convert global sass variables to theme object
-
-styled-components: code now dependent on specific framework
-
-"styled-components" generates an actual stylesheet with classes, 
-and attaches those classes to the DOM nodes of styled components via the `className` prop
-
-"styled-components" injects the generated stylesheet at the end of the head of the document during runtime
-
-"styled-components" injects its styles during runtime at the end of the `<head>` by default
-
-there is no way to give "styled-components" immunity from the host page's styles, 
-but boost the specificity of "styled-components" style rules with "babel-plugin-styled-components-css-namespace"
+`readonly` modifier: get compile time immutability
+`readonly` modifier allow initialization, but will not allow reassignment by highlighting compiler errors
+TypeScript-Website-2/packages/documentation/copy/en/handbook-v2/Object Types.md
 
 ### TO-DO:
 

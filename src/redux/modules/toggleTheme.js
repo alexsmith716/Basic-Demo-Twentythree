@@ -1,4 +1,3 @@
-// Actions
 const TOGGLE_THEME_DEFAULT = 'redux-example/toggleTheme/TOGGLE_THEME_DEFAULT';
 const TOGGLE_THEME_DARK = 'redux-example/toggleTheme/TOGGLE_THEME_DARK';
 
@@ -9,7 +8,6 @@ const initialState = {
 	theme: AppTheme.theme.defaultTheme
 };
 
-// Reducer
 export default function reducer(state = initialState, action = {}) {
 
 	// console.log('>>>> toggleTheme > reducer > state.theme: ', state.theme);
@@ -31,7 +29,6 @@ export default function reducer(state = initialState, action = {}) {
 	}
 }
 
-// Actions
 export function toggleTheme(themeType) {
 	const t = themeType === 'default' ? TOGGLE_THEME_DARK : TOGGLE_THEME_DEFAULT;
 	return {
